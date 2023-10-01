@@ -34,8 +34,7 @@ fn main() -> Result<(), Error> {
             Err(_) => {0},
         };
 
-        if subscriptions.len() > input - 1 && input - 1 > 0 {
-            println!("https://twitch.tv/{}", subscriptions[input-1].channel);
+        if subscriptions.len() > input - 1 && input > 0 {
             Command::new("streamlink")
                 .arg(format!("https://twitch.tv/{}", subscriptions[input-1].channel))
                 .arg("best")
